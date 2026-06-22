@@ -82,6 +82,25 @@ hr{
   border-top:1px solid #333;
   margin:50px 0;
 }
+
+  .gallery{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:10px 0 20px 0;
+  scroll-snap-type:x mandatory;
+}
+
+.gallery img{
+  width:80%;
+  max-width:420px;
+  height:auto;
+  border-radius:10px;
+  scroll-snap-align:center;
+  flex-shrink:0;
+}
+
+
 </style>
 </head>
 
@@ -236,6 +255,18 @@ hr{
     알림 신청하기
   </a>
 </div>
+<div class="section">
+  <h2>연습 현장</h2>
 
+  <div class="gallery">
+    <img src="images/rehearsal1.jpg" alt="연습사진 1">
+    <img src="images/rehearsal2.jpg" alt="연습사진 2">
+    <img src="images/rehearsal3.jpg" alt="연습사진 3">
+    <img src="images/rehearsal4.jpg" alt="연습사진 4">
+    <img src="images/rehearsal5.jpg" alt="연습사진 5">
+    <img src="images/rehearsal6.jpg" alt="연습사진 6">
+  </div>
+</div>
+  
 </body>
 </html>
