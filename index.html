@@ -98,12 +98,47 @@ hr{
   border-radius:10px;
   scroll-snap-align:center;
   flex-shrink:0;
+
+  .lightbox{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  z-index:9999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
 }
 
 
 </style>
 </head>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
 
+<script>
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.addEventListener('click', () => {
+    document.getElementById('lightbox').style.display = 'block';
+    document.getElementById('lightbox-img').src = img.src;
+  });
+});
+
+function closeLightbox(){
+  document.getElementById('lightbox').style.display = 'none';
+}
+</script>
 <body>
 
 <img src="poster.jpg" class="main-img" alt="꼰대 오지라퍼 관종 박철남 포스터">
